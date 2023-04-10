@@ -1,5 +1,6 @@
 import express from "express";
 // TODO: import router from users.route
+import userRouter from "./routes";
 
 const router = express.Router();
 
