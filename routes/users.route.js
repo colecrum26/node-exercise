@@ -12,6 +12,7 @@ router.get("/:id?", async (req, res, next) => {
         } else {
             data = await db.getAll();
         }
+        res.json(data);
      } catch (error) {
         next(error);
      }  
@@ -21,7 +22,7 @@ router.post("/", async (req, res, next) => {
     try {
         let newUser = req.body;
         let data = await db.add(newUser);
-        res.send(data);
+        res.json(data);
      } catch (error) {
         next(error);
      }  
@@ -29,7 +30,10 @@ router.post("/", async (req, res, next) => {
 
 router.put("/:id", async (req, res, next) => {
     try {
-        
+        let { id } = req.params;
+        let updatedUser = req.body;
+        let data = await db.update(id, updatedUser)
+        res.json(data);
      } catch (error) {
         next(error);
      }  
@@ -37,7 +41,9 @@ router.put("/:id", async (req, res, next) => {
 
 router.delete("/:id", async (req, res, next) => {
     try {
-        
+        let { id } = req.params;
+        let data = await db.remove(id);
+        res.json(data);
      } catch (error) {
         next(error);
      }  
