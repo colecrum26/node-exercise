@@ -1,6 +1,6 @@
 import express from "express";
 // TODO: import router from users.route
-import { router as userRouter } from "./routes/users.route";
+import userRouter from "./users.route";
 
 const router = express.Router();
 
