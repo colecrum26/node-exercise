@@ -5,7 +5,7 @@ const findAll = async () => {
 };
 
 const findOne = async (id) => {
-  return query("SELECT EmployeeID, FirstName, LastName, Title FROM employees", [
+  return query("SELECT EmployeeID, FirstName, LastName, Title FROM employees WHERE EmployeeID = ?", [
     id,
   ]);
 };
