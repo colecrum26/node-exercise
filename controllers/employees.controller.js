@@ -14,7 +14,7 @@ const addOne = async (employee) => {
     return await query("INSERT INTO employees SET ?", [employee]);
   };
   
-  const updateOne = async (employee, id) => {
+  const updateOne = async (id, employee) => {
     return await query("UPDATE employees SET ? WHERE EmployeeID = ?", [
       employee,
       id,
