@@ -1,7 +1,7 @@
 import express from "express";
 // TODO: import router from users.route
 import userRouter from "./users.route";
-import employeeRouter from "./employees.routes"
+import employeeRouter from "./employees.routes";
 
 const router = express.Router();
 
